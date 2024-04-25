@@ -13,7 +13,7 @@ namespace DesafioFundamentos.Models
             this.precoInicial = precoInicial;
             this.precoPorHora = precoPorHora;
             this.registraHoraEntrada = registraHoraEntrada;
-            //this.registraHoraSaida = registraHoraSaida;
+            this.registraHoraSaida = registraHoraSaida;
 
         }
 
@@ -56,8 +56,8 @@ namespace DesafioFundamentos.Models
                 
                 int horas = 0;
                 int valorTotal = 0;
-                DateTime registraHoraSaida = DateTime.Now;
-                DateTime horaEstacionada = registraHoraEntrada.AddHours(horas);
+                registraHoraSaida = DateTime.Now;
+                //DateTime horaEstacionada = registraHoraEntrada.AddHours(horas);
             
                 horas = Convert.ToInt32(Console.ReadLine()); ;//converte string para int
                 valorTotal = Convert.ToInt32(precoInicial + precoPorHora * horas);
@@ -87,7 +87,7 @@ namespace DesafioFundamentos.Models
 
                 foreach (var veiculo in veiculos)
                 {
-                    Console.WriteLine($"{veiculo} - Entrada: {registraHoraEntrada}");
+                    Console.WriteLine($"{veiculo} ");
                 }
             }
             else
