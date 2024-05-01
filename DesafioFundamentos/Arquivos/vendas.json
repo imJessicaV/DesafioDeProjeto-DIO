@@ -1,5 +1,20 @@
-{
-  "Id": 1,
-  "Produto": "Caderno Star Wars",
-  "Preco": 25.00
-}
+[
+  {
+    "Id": 1,
+    "Nome_Produto": "Caderno Star Wars",
+    "Preco": 25.00,
+    "DataVenda": "2024-05-01T12:18:33.9210358-03:00"
+  },
+  {
+    "Id": 2,
+    "Nome_Produto": "Mochila Star Wars",
+    "Preco": 189.00,
+    "DataVenda": "2024-05-01T12:18:33.9210358-03:00"
+  },
+  {
+    "Id": 3,
+    "Nome_Produto": "Fichário Star Wars",
+    "Preco": 109.00,
+    "DataVenda": "2024-05-01T12:18:33.9210358-03:00"
+  }
+]

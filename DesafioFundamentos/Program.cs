@@ -2,13 +2,34 @@
 using DesafioFundamentos.Models;
 using Newtonsoft.Json;
 
-Vendas V1 = new  Vendas(1, "Caderno Star Wars", 25.00M);
+string conteudoDoc = File.ReadAllText("Arquivos/vendas.json");
 
-string serializado = JsonConvert.SerializeObject(V1, Formatting.Indented); //serialização do objeto
+List<Venda> listaVenda= JsonConvert.DeserializeObject<List<Venda>>(conteudoDoc);
 
-File.WriteAllText("Arquivos/vendas.json", serializado); //transforma o objeto serializado em um arqquivo com o conteudo do objeto serializado
+foreach (Venda venda in listaVenda)
+{
+    Console.WriteLine($"Id: {venda.Id} | Produto: {venda.Produto} | Data da Venda: {venda.DataVenda.ToString("dd/MM/yyy HH:mm")})");
 
-Console.WriteLine(serializado);
+}
+
+
+// DateTime dataAtual = DateTime.Now;
+
+// List<Vendas> listaVendas = new List<Vendas>();
+
+// Vendas V1 = new  Vendas(1, "Caderno Star Wars", 25.00M, dataAtual);
+// Vendas V2 = new  Vendas(2, "Mochila Star Wars", 189.00M, dataAtual);
+// Vendas V3 = new  Vendas(3, "Fichário Star Wars", 109.00M, dataAtual);
+
+// listaVendas.Add(V1);
+// listaVendas.Add(V2);
+// listaVendas.Add(V3);
+
+// string serializado = JsonConvert.SerializeObject(listaVendas, Formatting.Indented); //serialização do objeto
+
+// File.WriteAllText("Arquivos/vendas.json", serializado); //transforma o objeto serializado em um arqquivo com o conteudo do objeto serializado
+
+// Console.WriteLine(serializado);
 
 // // Coloca o encoding para UTF8 para exibir acentuação
 // Console.OutputEncoding = System.Text.Encoding.UTF8;
